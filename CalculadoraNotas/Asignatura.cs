@@ -23,44 +23,49 @@ namespace CalculadoraNotas
             double sumatoriaPorcentaje  = 0; 
             foreach (Notas nota in notas)
             {
-                sumatoriaPorcentaje *= nota.Porcentaje;
+                sumatoriaPorcentaje += nota.porcentaje;
             }
             return sumatoriaPorcentaje;
         }
 
-        private bool ValidarPorcentaje() {
-            if (this.ContarPorcentaje() <= 1) return true;
-            else return false;
+        public bool ValidarPorcentaje() {
+            if (this.ContarPorcentaje() < 1) return true;
+            return false;
+        }
+
+        public override string ToString() {
+            string sb = "";
+            sb += $"## {this.nombre} ##\n";
+            foreach (Notas nota in notas) {
+                sb += ($"Nombre: {nota.nombre}\nNota: {nota.valor}\nPorcentaje: {nota.porcentaje}\n");
+            }
+            return sb;
         }
 
         private double Promedio() {
             double SumatoriaNotas = 0;
             foreach (Notas nota in notas)
             {
-                SumatoriaNotas += (nota.Valor * nota.Porcentaje);
+                SumatoriaNotas += (nota.valor * nota.porcentaje);   
             }
             return SumatoriaNotas;
         }
 
         public double notasAcomuladas()
         {
-            if(this.notas.Count > 0)
-            return this.Promedio()/this.ContarPorcentaje();
-            else return 0;
+            if (this.notas.Count > 0 && ValidarPorcentaje())
+                return this.Promedio() / this.ContarPorcentaje();
+            else if (this.notas.Count > 0 && !ValidarPorcentaje())
+                return this.Promedio();
+            return 0;
         }
 
         public double notaDeseada(double NotaRequerida) {
             if (this.notas.Count > 0)
             {
-                if (ValidarPorcentaje())
-                {
-                    return (NotaRequerida - Promedio()) / (1 - ContarPorcentaje());
-                }
-                else
-                {
-                    return this.Promedio();
-                }
-            }else return 0;       
+                if (ValidarPorcentaje()) return (NotaRequerida - this.Promedio()) / (1 - this.ContarPorcentaje());
+                else return this.Promedio();
+            } return 0;       
         }
     }
 }

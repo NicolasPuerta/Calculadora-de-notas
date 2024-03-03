@@ -1,0 +1,7 @@
+C:\Users\DAVID\Desktop\projects\CalculadoraNotas\Workshop-1-Herramientas\CalculadoraNotas\bin\Debug\CalculadoraNotas.exe.config
+C:\Users\DAVID\Desktop\projects\CalculadoraNotas\Workshop-1-Herramientas\CalculadoraNotas\bin\Debug\CalculadoraNotas.exe
+C:\Users\DAVID\Desktop\projects\CalculadoraNotas\Workshop-1-Herramientas\CalculadoraNotas\bin\Debug\CalculadoraNotas.pdb
+C:\Users\DAVID\Desktop\projects\CalculadoraNotas\Workshop-1-Herramientas\CalculadoraNotas\obj\Debug\CalculadoraNotas.csproj.AssemblyReference.cache
+C:\Users\DAVID\Desktop\projects\CalculadoraNotas\Workshop-1-Herramientas\CalculadoraNotas\obj\Debug\CalculadoraNotas.csproj.CoreCompileInputs.cache
+C:\Users\DAVID\Desktop\projects\CalculadoraNotas\Workshop-1-Herramientas\CalculadoraNotas\obj\Debug\CalculadoraNotas.exe
+C:\Users\DAVID\Desktop\projects\CalculadoraNotas\Workshop-1-Herramientas\CalculadoraNotas\obj\Debug\CalculadoraNotas.pdb

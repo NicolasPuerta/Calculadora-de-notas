@@ -8,22 +8,22 @@ namespace CalculadoraNotas
 {
     public class Notas
     {
-        public string Nombre
+        public string nombre
         {
             get; set;
         }
-        public double Porcentaje
+        public double porcentaje
         {
             get; set;
         }
-        public double Valor        {
+        public double valor        {
             get; set;
         }
     public Notas(string nombre, double valor, double porcentaje)
         {
-            this.Nombre = nombre;
-            this.Valor = valor;
-            this.Porcentaje = porcentaje /100;
+            this.nombre = nombre;
+            this.valor = valor;
+            this.porcentaje = (porcentaje /100);
         }
     }
 }
