@@ -19,11 +19,16 @@ namespace CalculadoraNotas
         public double valor        {
             get; set;
         }
-    public Notas(string nombre, double valor, double porcentaje)
+        public Notas(string Nombre, double Valor, double Porcentaje)
         {
-            this.nombre = nombre;
-            this.valor = valor;
-            this.porcentaje = (porcentaje /100);
+            this.nombre = Nombre;
+            this.valor = Valor;
+            this.porcentaje = (Porcentaje /100);
+        }
+        public override string ToString()
+        {
+            return ($"Nombre: {this.nombre}\nNota: {this.valor}\nPorcentaje: {this.porcentaje*100}%\n");
         }
     }
+
 }

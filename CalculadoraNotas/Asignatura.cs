@@ -34,11 +34,21 @@ namespace CalculadoraNotas
         }
 
         public override string ToString() {
+            return ($"Nombre: {this.nombre}\nCreditos: {this.creditos}");
+        }
+
+        public string verNotas()
+        {
             string sb = "";
             sb += $"## {this.nombre} ##\n";
-            foreach (Notas nota in notas) {
-                sb += ($"Nombre: {nota.nombre}\nNota: {nota.valor}\nPorcentaje: {nota.porcentaje}\n");
+            if (notas.Count > 0)
+            {
+                foreach (Notas nota in notas)
+                {
+                    sb += nota.ToString();
+                }
             }
+            else sb += "No hay notas";
             return sb;
         }
 
@@ -53,19 +63,16 @@ namespace CalculadoraNotas
 
         public double notasAcomuladas()
         {
-            if (this.notas.Count > 0 && ValidarPorcentaje())
+            if (this.notas.Count > 0 && this.ValidarPorcentaje())
                 return this.Promedio() / this.ContarPorcentaje();
-            else if (this.notas.Count > 0 && !ValidarPorcentaje())
+            else if (this.notas.Count > 0 && !this.ValidarPorcentaje())
                 return this.Promedio();
             return 0;
         }
 
         public double notaDeseada(double NotaRequerida) {
-            if (this.notas.Count > 0)
-            {
-                if (ValidarPorcentaje()) return (NotaRequerida - this.Promedio()) / (1 - this.ContarPorcentaje());
-                else return this.Promedio();
-            } return 0;       
+            if (ValidarPorcentaje()) return (NotaRequerida - this.Promedio()) / (1 - this.ContarPorcentaje());
+            return this.Promedio();      
         }
     }
 }
